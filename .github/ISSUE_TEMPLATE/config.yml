@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: KPT Documentation
+    url: https://github.com/Kijan-Company/KijanPersonalTracker
+    about: Architecture, self-hosting, and module overview.
+  - name: Real-time Status
+    url: https://status.kijan.ch
+    about: Check current service health before opening an issue.
