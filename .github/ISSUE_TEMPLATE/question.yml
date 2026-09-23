@@ -1,0 +1,55 @@
+name: Question / Support
+description: Ask a question about installation, configuration, or usage.
+title: "[Question]: "
+labels: ["intake", "question", "src:github"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for **how-do-I** questions and one-off support
+        requests. For real-time help, see
+        [SUPPORT.md](https://github.com/Kijan-Company/kpt-support/blob/main/SUPPORT.md)
+        for our response-time expectations.
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Installation / Setup
+        - Garmin Connect IQ pairing
+        - Backend / Self-hosting
+        - Subscription / Plan
+        - Account / Privacy / GDPR
+        - Dashboard usage
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      placeholder: |
+        How do I move my data from the Garmin watch to a fresh self-hosted
+        backend instance without losing history?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / what you have tried
+      description: Links, error messages, what you tried, version numbers.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have searched existing issues and documentation.
+          required: true
+        - label: I am not sharing personal health data.
+          required: true
