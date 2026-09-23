@@ -1,0 +1,104 @@
+name: Bug Report
+description: File a bug, crash, or unexpected behaviour.
+title: "[Bug]: "
+labels: ["intake", "bug", "src:github"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. The more detail you give, the
+        faster we can reproduce and fix it. **If your bug involves personal
+        health data, do not paste it here — describe the symptom only.**
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which product is affected?
+      options:
+        - Garmin Connect IQ App (kpt-app-ciq)
+        - Web Dashboard
+        - Marketing Website
+        - Backend / Sync
+        - Symptoms App (kpt-symptoms-app)
+        - Other / Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical (crash, data loss, blocker)
+        - High (major feature broken, no workaround)
+        - Medium (minor bug, workaround exists)
+        - Low (cosmetic)
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / Platform
+      description: e.g. Garmin Fenix 7, Firefox 124, iPhone 15, etc.
+      placeholder: "Garmin Fenix 7 Solar, firmware 18.20"
+    validations:
+      required: false
+
+  - type: input
+    id: app_version
+    attributes:
+      label: App / Firmware version
+      description: App version shown in Settings → About (if applicable).
+      placeholder: "2.3.1"
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the bug.
+      placeholder: |
+        When I open the dashboard after sync, the activity timeline shows the
+        wrong day for entries created after midnight.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Numbered list, smallest possible.
+      placeholder: |
+        1. Open dashboard
+        2. Click "Today"
+        3. Scroll to last activity
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Screenshots
+      description: Paste relevant log lines or attach a screenshot.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
+        - label: I am not attaching any personal health data (symptoms, HRV, etc.).
+          required: true
