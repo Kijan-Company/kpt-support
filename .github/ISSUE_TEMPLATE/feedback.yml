@@ -1,0 +1,31 @@
+name: General Feedback
+description: Anything else — usability, UX, performance, accessibility, ideas.
+title: "[Feedback]: "
+labels: ["intake", "feedback", "src:github"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for general feedback that doesn't fit Bug / Feature / Question.
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your feedback
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sentiment
+    attributes:
+      label: Sentiment
+      options:
+        - Positive
+        - Neutral
+        - Negative
+
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact (optional)
+      description: Email or GitHub handle if you'd like a reply.
